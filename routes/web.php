@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Job;
+use App\Models\Skill;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $skills = Skill::all();
+    $jobs = Job::all();
+    return view('welcome',compact('skills','jobs'));
 });
