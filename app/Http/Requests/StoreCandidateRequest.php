@@ -31,4 +31,11 @@ class StoreCandidateRequest extends FormRequest
             'skills.*'=>'required|exists:skills,id|distinct:strict'
         ];
     }
+
+    protected function passedValidation()
+    {
+        $data = $this->validated();
+        $data['job_id'] = $data['job'];
+        $this->replace($data);
+    }
 }

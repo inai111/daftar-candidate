@@ -23,6 +23,6 @@ class Candidate extends Model
 
     public function Job()
     {
-        return $this->hasOne(Job::class);
+        return $this->belongsTo(Job::class);
     }
 }

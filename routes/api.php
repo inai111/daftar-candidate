@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Api\V1\CandidateController;
+use App\Http\Controllers\Api\V1\JobController;
+use App\Http\Controllers\Api\V1\SkillController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,4 +22,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::prefix('v1')->group(function(){
     Route::resource('candidates', CandidateController::class);
+    Route::resource('jobs', JobController::class);
+    Route::resource('skills', SkillController::class);
 });
