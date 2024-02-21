@@ -1,7 +1,6 @@
 <?php
 
-use App\Models\Job;
-use App\Models\Skill;
+use App\Livewire\DaftarCandidate;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,8 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $skills = Skill::all();
-    $jobs = Job::all();
-    return view('welcome',compact('skills','jobs'));
-});
+Route::get('/',DaftarCandidate::class);
