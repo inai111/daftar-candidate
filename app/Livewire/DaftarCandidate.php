@@ -25,7 +25,7 @@ class DaftarCandidate extends Component
 
         # pakai docker
         $client = new Client([
-            'base_uri' => env('APP_URL_API').'/api/v1/',
+            'base_uri' => env('APP_URL_API','http://localhost').'/api/v1/',
             'timeout' => 5,
             'headers' => ['Accept' => 'application/json']
         ]);
@@ -46,10 +46,12 @@ class DaftarCandidate extends Component
     {
         # pakai docker
         $client = new Client([
-            'base_uri' => env('APP_URL_API').'/api/v1/',
+            'base_uri' => env('APP_URL_API','http://localhost').'/api/v1/',
             'timeout' => 5,
             'headers' => ['Accept' => 'application/json']
         ]);
+
+        $this->resetValidation();
 
         $data = [
             'name'=>$this->name,
